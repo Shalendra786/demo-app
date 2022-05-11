@@ -1,25 +1,37 @@
 import logo from './logo.svg';
 import './App.css';
+import  Navbaar  from './components/Navbar';
+import {Link} from 'react-router-dom'
 
-function App() {
+function Home() {
   return (
+    
+
     <div className="App">
+      <Navbaar />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Hello Everyone this is <code>Shailendra Mishra</code>.
         </p>
-        <a
+       <p>
+         I have started working with WITMATES TECHNOLOGIES as a React Developer.
+       </p>
+       
+       
+       
+       
+        {/* <a
           className="App-link"
           href="https://reactjs.org"
           target="_blank"
           rel="noopener noreferrer"
         >
           Learn React
-        </a>
+        </a> */}
       </header>
     </div>
   );
 }
 
-export default App;
+export default Home;
