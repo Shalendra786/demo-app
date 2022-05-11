@@ -1,4 +1,3 @@
-
 import {
     Collapse,
     Navbar,
@@ -7,18 +6,15 @@ import {
     Nav,
     NavItem,
     NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem
   } from 'reactstrap';
 const Navbaar = () => {
     return (
         <>
       
           <Navbar
-                color="info"
+                color="light"
                 expand="md"
+                fixed="top"
                 light
             >
                 <NavbarBrand href="/">
@@ -45,29 +41,7 @@ const Navbaar = () => {
                             Contact Me 
                             </NavLink>
                         </NavItem>
-                        <UncontrolledDropdown
-                            inNavbar
-                            nav
-                        >
-                            <DropdownToggle
-                                caret
-                                nav
-                            >
-                                Options
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>
-                                    Option 1
-                                </DropdownItem>
-                                <DropdownItem>
-                                    Option 2
-                                </DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>
-                                    Reset
-                                </DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
+                        
                     </Nav>
                     
                 </Collapse>

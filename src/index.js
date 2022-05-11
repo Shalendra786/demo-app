@@ -15,8 +15,8 @@ export default function App() {
     
       <Router>
         
-          <Route exact path="/"  ><Home /> </Route>
-          <Route path="/contact" > <Contact /> </Route>
+          <Route exact path="/"> <Home /> </Route>
+          <Route path="/contact"> <Contact /> </Route>
           <Route path="/about"> <About /> </Route>
           <Route path="*" > <NoPage /> </Route>
        
