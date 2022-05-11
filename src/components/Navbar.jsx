@@ -14,13 +14,13 @@ const Navbaar = () => {
           <Navbar
                 color="light"
                 expand="md"
-                fixed="top"
+                sticky='top'
                 light
             >
                 <NavbarBrand href="/">
                     Shailendra Mishra
                 </NavbarBrand>
-                <NavbarToggler onClick={function noRefCheck() { }} />
+                <NavbarToggler />
                 <Collapse navbar>
                     <Nav
                         className="me-auto"

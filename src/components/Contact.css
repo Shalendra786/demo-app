@@ -1,0 +1,14 @@
+.text{
+    color: rgb(7, 7, 7);
+    text-align: center;
+    padding-top: 40px;
+}
+.form{
+    padding: 48px 0px;
+    display: flex;
+    justify-content: space-around;
+    color: black;
+}
+.about{
+    background-color: rgb(240, 217, 118);
+}

@@ -4,7 +4,7 @@ import './index.css';
 import Home from './Home';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbaar from './components/Navbar';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -12,22 +12,25 @@ import NoPage from './components/NoPage';
 
 export default function App() {
   return (
-    
-      <Router>
-        
-          <Route exact path="/"> <Home /> </Route>
-          <Route path="/contact"> <Contact /> </Route>
-          <Route path="/about"> <About /> </Route>
-          <Route path="*" > <NoPage /> </Route>
-       
-      </Router>
-  
+    <>
+      <BrowserRouter>
+        <Routes>
+
+          <Route exact path="/" element={<Navbaar />} />
+          <Route index element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NoPage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+
   );
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <Home />
+
+  <App />
 );
 
 // If you want to start measuring performance in your app, pass a function

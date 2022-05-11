@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 import  Navbaar  from './components/Navbar';
-import {Link} from 'react-router-dom'
 
 function Home() {
   return (
