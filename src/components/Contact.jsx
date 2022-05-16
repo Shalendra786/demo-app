@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import Navbaar from './Navbar';
 import './Contact.css';
-const FORM_ENDPOINT = "";
+import {
+ Button
+} from 'reactstrap';
+import { Link } from "react-router-dom";
 const Contact = () => {
   const [submitted, setSubmitted] = useState({ name: '', email: '', message: '' });
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    // e.preventDefault()
     localStorage.setItem('data', JSON.stringify(submitted))
   };
   const handleChange = (e) => {
@@ -52,12 +56,16 @@ const Contact = () => {
             />
           </div>
           <div className="mb-3 pt-0">
-            <button
-              className="bg-blue-500 text-black active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            <a href={'/contact'}>
+            <Button
+            color="success"
+            outline
+              
               type="submit"
             >
               Send a message
-            </button>
+            </Button>
+            </a>
           </div>
         </form>
       </div>

@@ -1,0 +1,6 @@
+
+    
+ {"hits":
+    [{"created_at":"2022-05-16T10:50:41.000Z","title":"Show HN: Do not type same commands","url":"https://github.com/0xsuk/kop","author":"0xsuk","points":1,"story_text":"I published a little cli tool that I use to reduce stress on terminal.\u003cp\u003eIf you hate typing same(OR SIMILAR) commands again and again, give it a try!","comment_text":null,"num_comments":0,"story_id":null,"story_title":null,"story_url":null,"parent_id":null,"created_at_i":1652698241,"_tags":["story","author_0xsuk","story_31395443","show_hn"],"objectID":"31395443","_highlightResult":{"title":{"value":"Show HN: Do not type same commands","matchLevel":"none","matchedWords":[]},"url":{"value":"https://github.com/0xsuk/kop","matchLevel":"none","matchedWords":[]},"author":{"value":"0xsuk","matchLevel":"none","matchedWords":[]},"story_text":{"value":"I published a little cli tool that I use to reduce stress on terminal.\u003cp\u003eIf you hate typing same(OR SIMILAR) commands again and again, give it a try!","matchLevel":"none","matchedWords":[]}}}]
+}
+
