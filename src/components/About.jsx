@@ -38,7 +38,7 @@ function Home() {
   }
 
   const fetchMoreData = async () => {
-    // setPage(page + 1)
+
     count.current = count.current + 1;
     const res = await axios.get(
       `https://hn.algolia.com/api/v1/search_by_date?tags=story&page=${count.current}`
@@ -46,7 +46,7 @@ function Home() {
     );
 
     let newData = res.data.hits;
-    console.log(newData)
+    // console.log(newData)
     setOldData([...oldData, ...newData])
 
   };
@@ -57,70 +57,73 @@ function Home() {
   return (
     <>
       <Navbaar />
-     
 
 
-        <InfiniteScroll
-          dataLength={oldData.length}
-          next={fetchMoreData}
-          hasMore={oldData.length !== 1000}
-          loader={<center>Loading...</center>}
-        >
 
-          <TableContainer >
-          
-            <Table sx={{ maxWidth: 650 }} aria-label="a dense table" >
-            
-              <TableHead  >
-              
-                <TableRow >
-                  <TableCell>Created_at</TableCell>
-                  <TableCell align="left">Title</TableCell>
-                  <TableCell align="left">URL</TableCell>
-                  <TableCell align="left">Author</TableCell>
+      <InfiniteScroll
+        dataLength={oldData.length}
+        next={fetchMoreData}
+        hasMore={true}
+        loader={<center>Loading...</center>}
+      >
+
+        <TableContainer >
+
+          <Table sx={{ maxWidth: 650 }} aria-label="a dense table" >
+
+            <TableHead  >
+
+              <TableRow >
+                <TableCell >S.No.</TableCell>
+                <TableCell >Created_at</TableCell>
+                <TableCell  align="left">Title</TableCell>
+                <TableCell  align="left">URL</TableCell>
+                <TableCell align="left">Author</TableCell>
+              </TableRow>
+
+            </TableHead>
+
+
+            <TableBody>
+
+
+              {oldData.map((data, index) => (
+
+
+                <TableRow
+                  key={data.title}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  onClick={''}
+                >
+
+
+                  <TableCell component="th" scope="row">
+                    {index + 1}
+                  </TableCell>
+                  <TableCell >{data.created_at}</TableCell>
+                  <TableCell align="left"><Link className='container' to="/data"> {data.title}</Link></TableCell>
+
+                  <TableCell align="left"><Link className='container' to="/data">{data.url}</Link></TableCell>
+
+                  <TableCell align="left">{data.author}</TableCell>
+
+
                 </TableRow>
-                
-              </TableHead>
-             
 
-              <TableBody>
-
-
-                {oldData.map((data) => (
-
-
-                  <TableRow
-                    key={data.title}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-
-                  >
+              ))}
+            </TableBody>
 
 
 
-                    <TableCell component="th">{data.created_at}</TableCell>
-                     <TableCell align="left"><Link className='container' to="/data"> {data.title}</Link></TableCell> 
-                    
-                      <TableCell align="left"><Link className='container' to="/data">{data.url}</Link></TableCell>
-                    
-                    <TableCell align="left">{data.author}</TableCell>
+
+          </Table>
+
+        </TableContainer>
+
+      </InfiniteScroll>
 
 
-                  </TableRow>
 
-                ))}
-              </TableBody>
-
-            
-
-            
-            </Table>
-            
-          </TableContainer>
-       
-        </InfiniteScroll>
-
-
-     
     </>
 
   );

@@ -10,7 +10,7 @@ function Home() {
       <div className="App-header">
     
         
-        <h1 className='p_tag' >
+        <h1 data-testid="child" className='p_tag' >
           <b>
           Designer & Front-end Developer.
           </b>
@@ -39,6 +39,9 @@ function Home() {
       
     </div>
   );
+}
+ function Sum(a, b) {
+  return a + b;
 }
 
 export default Home;

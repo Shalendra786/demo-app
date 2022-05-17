@@ -54,6 +54,7 @@ const Navbaar = () => {
               letterSpacing: '.1rem',
               textDecoration: 'none',
             }}
+            data-testid="child"
           >
               SHAILENDRA MISHRA
           </Typography></Link>
