@@ -1,6 +1,5 @@
 import { Link, useNavigate,useLocation } from 'react-router-dom';
 import React from 'react';
-import employee from './data.json';
 import { Button } from '@mui/material';
 
 const Component=()=> {
