@@ -10,7 +10,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Navbaar from './Navbar';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 
 function Home() {
 
@@ -39,7 +39,7 @@ function Home() {
 
   const fetchMoreData = async () => {
 
-    count.current = count.current + 1;
+   
     const res = await axios.get(
       `https://hn.algolia.com/api/v1/search_by_date?tags=story&page=${count.current}`
 
@@ -48,8 +48,10 @@ function Home() {
     let newData = res.data.hits;
     // console.log(newData)
     setOldData([...oldData, ...newData])
+     count.current = count.current + 1;
 
   };
+  let navigate = useNavigate();
 
 
 
@@ -93,7 +95,9 @@ function Home() {
                 <TableRow
                   key={data.title}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  onClick={''}
+                  onClick={()=>{
+                    navigate(`/data/?lid=${JSON.stringify(oldData[index])}`)
+                  }}
                 >
 
 
@@ -101,9 +105,9 @@ function Home() {
                     {index + 1}
                   </TableCell>
                   <TableCell >{data.created_at}</TableCell>
-                  <TableCell align="left"><Link className='container' to="/data"> {data.title}</Link></TableCell>
+                  <TableCell align="left"> {data.title}</TableCell>
 
-                  <TableCell align="left"><Link className='container' to="/data">{data.url}</Link></TableCell>
+                  <TableCell align="left">{data.url}</TableCell>
 
                   <TableCell align="left">{data.author}</TableCell>
 

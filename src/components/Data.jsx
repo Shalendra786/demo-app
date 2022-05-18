@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate,useLocation } from 'react-router-dom';
 import React from 'react';
 import employee from './data.json';
 import { Button } from '@mui/material';
@@ -6,14 +6,18 @@ import { Button } from '@mui/material';
 const Component=()=> {
     
   let navigate = useNavigate();
+  const search = useLocation().search;
+  const name = new URLSearchParams(search).get('lid');
 
     
         return (
         <>
-        <div >{JSON.stringify(employee)}
+        <div >{JSON.stringify(name)}
         
         </div>
-        <div><Button onClick={()=>{navigate('/about')}}>to Click to Go Back </Button></div>
+        <br />
+        <br />
+        <center><Button variant='contained' onClick={()=>{navigate('/about')}}>to Click to Go Back </Button></center>
         </>
         );
     
