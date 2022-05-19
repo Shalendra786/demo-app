@@ -10,16 +10,16 @@ jest.mock('axios');
 
 
 
-// describe('About  component', () => {
+describe('About  component', () => {
 
-  test('it renders', () => {
+  test('find out title is present or not', () => {
     // axios.get.mockResolvedValue({ data: fakeUsers });
     render(<About />);
-    const Element = screen.getByText("Title")
+    const Element = screen.getByText("Title");
     expect(Element).toBeInTheDocument();
   });
 
-// })
+})
 
 
   // let mock;

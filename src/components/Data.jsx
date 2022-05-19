@@ -23,7 +23,7 @@ const Component=()=> {
         
         <br />
         <div>
-        <center><Button variant='contained'  color="success" onClick={()=>{navigate('/about')}}>to Click to Go Back </Button></center>
+        <center><Button variant='contained' style={{backgroundColor:'#7510F7'}} color="success" onClick={()=>{navigate('/about')}}>Click to Go Back </Button></center>
         
         </div>
         
