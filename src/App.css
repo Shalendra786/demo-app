@@ -8,10 +8,26 @@
   display: block;
   background-color:white;
 }
+.scroll{
+  
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  background-color:white;
+  padding: 5px 25px;
+  overflow-y: break-word;
+}
+.App .scroll .scroll2{
+  
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  background-color:white;
+ padding: 5px 25px;
+}
 .App2 {
   width: 100%;
   display:block;
-  overflow: hidden;
 }
 
 .App .App-header .App-logo {
@@ -43,11 +59,21 @@ img {
 
 .App .App-header .p_tag {
   color: black;
-  padding: 0.75rem;
+  display: block;
+  font-size: 50px;
+  padding: 0.8rem;
    
+}
+.color{
+  background-color: #61dafb;
+  position: sticky;
 }
 .App .App-header .p_tag2 {
   color: black;
+  font-size: large;
+  display: block;
+  font-weight: 300;
+  padding: 0.8rem;
 }
 .App .about_me{
   width: 100%;

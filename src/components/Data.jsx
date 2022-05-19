@@ -1,6 +1,8 @@
-import { Link, useNavigate,useLocation } from 'react-router-dom';
+import { useNavigate,useLocation } from 'react-router-dom';
 import React from 'react';
 import { Button } from '@mui/material';
+import Navbaar from './Navbar';
+import '../App.css';
 
 const Component=()=> {
     
@@ -10,14 +12,22 @@ const Component=()=> {
 
     
         return (
-        <>
-        <div >{JSON.stringify(name)}
+        <div className="App2">
+         <Navbaar />
+         <br />
+       
+        <div style={{width:"100%"}} >
+         <p style={{display: "flex", flexWrap: "wrap", padding: "5px 35px", width: "100%", justifyContent: "center", overflowWrap:"anywhere"}} > {JSON.stringify(name)}
+         </p>
+          </div>
+        
+        <br />
+        <div>
+        <center><Button variant='contained'  color="success" onClick={()=>{navigate('/about')}}>to Click to Go Back </Button></center>
         
         </div>
-        <br />
-        <br />
-        <center><Button variant='contained' onClick={()=>{navigate('/about')}}>to Click to Go Back </Button></center>
-        </>
+        
+        </div>
         );
     
 }

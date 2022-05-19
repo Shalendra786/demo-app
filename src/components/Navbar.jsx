@@ -10,6 +10,7 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import './Contact.css';
 
@@ -38,6 +39,7 @@ const Navbaar = () => {
     <AppBar style={{backgroundColor:"#7510F7"}} position="sticky" sx={{  paddingTop:0}}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+          
         <Link to='/' style={{textDecoration:'none'}}>
           <Typography
             variant="h5"
@@ -54,10 +56,12 @@ const Navbaar = () => {
               letterSpacing: '.1rem',
               textDecoration: 'none',
             }}
-            data-testid="child"
+            
           >
+           
               SHAILENDRA MISHRA
-          </Typography></Link>
+          </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -131,7 +135,7 @@ const Navbaar = () => {
                 className='all'
                 // onClick={handleCloseNavMenu}
                 sx={{ my: 5, color: 'white', display: 'block',fontFamily: 'monospace',
-                fontWeight: 300,
+                fontWeight: 600,
                 letterSpacing: '.1rem',
                 textDecoration: 'inline', }}
                 
@@ -146,7 +150,7 @@ const Navbaar = () => {
                 
                 // onClick={handleCloseNavMenu}
                 sx={{ my: 5, color: 'white', display: 'block',fontFamily: 'monospace',
-                fontWeight: 300,
+                fontWeight: 600,
                 letterSpacing: '.1rem',
                 textDecoration: 'inline', }}
               > 
@@ -160,7 +164,7 @@ const Navbaar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="" />
+              <AdbIcon  sx={{ display: { xs: 'none', md: 'flex' }, mr: 3,color:'white' }} />
               </IconButton>
             </Tooltip>
             <Menu

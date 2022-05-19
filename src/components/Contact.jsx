@@ -4,7 +4,7 @@ import './Contact.css';
 import {
  Button
 } from 'reactstrap';
-import { Link } from "react-router-dom";
+
 const Contact = () => {
   const [submitted, setSubmitted] = useState({ name: '', email: '', message: '' });
   const handleSubmit = (e) => {

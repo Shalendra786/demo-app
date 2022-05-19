@@ -10,7 +10,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Navbaar from './Navbar';
-import { Link,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Paper from '@mui/material/Paper';
 
 function Home() {
 
@@ -57,11 +58,14 @@ function Home() {
 
 
   return (
+    
     <>
-      <Navbaar />
+    <Navbaar />
 
-
-
+    <br />
+   <div className='scroll'>
+   
+   <br />
       <InfiniteScroll
         dataLength={oldData.length}
         next={fetchMoreData}
@@ -69,18 +73,18 @@ function Home() {
         loader={<center>Loading...</center>}
       >
 
-        <TableContainer >
+        <TableContainer component={Paper} >
 
-          <Table sx={{ maxWidth: 650 }} aria-label="a dense table" >
+          <Table sx={{ maxWidth: "100%", border: 0 }} aria-label="a dense table" >
 
-            <TableHead  >
+            <TableHead className='color'  >
 
               <TableRow >
-                <TableCell >S.No.</TableCell>
-                <TableCell >Created_at</TableCell>
-                <TableCell  align="left">Title</TableCell>
-                <TableCell  align="left">URL</TableCell>
-                <TableCell align="left">Author</TableCell>
+                <TableCell style={{fontWeight:"800"}} >S.No.</TableCell>
+                <TableCell style={{fontWeight:"800"}} align="left">Created_at</TableCell>
+                <TableCell style={{fontWeight:"800"}} align="left">Title</TableCell>
+                <TableCell  style={{fontWeight:"800"}} align="left">URL</TableCell>
+                <TableCell style={{fontWeight:"800"}} align="left">Author</TableCell>
               </TableRow>
 
             </TableHead>
@@ -101,13 +105,13 @@ function Home() {
                 >
 
 
-                  <TableCell component="th" scope="row">
+                  <TableCell component="th" style={{fontWeight:"800"}} scope="row">
                     {index + 1}
                   </TableCell>
                   <TableCell >{data.created_at}</TableCell>
                   <TableCell align="left"> {data.title}</TableCell>
 
-                  <TableCell align="left">{data.url}</TableCell>
+                  <TableCell align="left" style={{overflowWrap:"anywhere"}}>{data.url}</TableCell>
 
                   <TableCell align="left">{data.author}</TableCell>
 
@@ -126,7 +130,7 @@ function Home() {
 
       </InfiniteScroll>
 
-
+      </div>
 
     </>
 

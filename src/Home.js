@@ -40,8 +40,6 @@ function Home() {
     </div>
   );
 }
- function Sum(a, b) {
-  return a + b;
-}
+
 
 export default Home;
